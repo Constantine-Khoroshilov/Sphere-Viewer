@@ -1,0 +1,97 @@
+object MainForm: TMainForm
+  Left = 220
+  Height = 669
+  Top = 131
+  Width = 1169
+  Caption = 'Viewer'
+  ClientHeight = 669
+  ClientWidth = 1169
+  Constraints.MinHeight = 669
+  Constraints.MinWidth = 1169
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.2.4.0'
+  object GLBox: TOpenGLControl
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crCross
+    Left = 248
+    Height = 629
+    Top = 20
+    Width = 901
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoResizeViewport = True
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 20
+    MultiSampling = 4
+    OnMouseDown = GLBoxMouseDown
+    OnMouseMove = GLBoxMouseMove
+    OnMouseUp = GLBoxMouseUp
+    OnPaint = GLBoxPaint
+  end
+  object MainPanel: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = GLBox
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 20
+    Height = 629
+    Top = 20
+    Width = 208
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 20
+    BevelOuter = bvNone
+    ClientHeight = 629
+    ClientWidth = 208
+    TabOrder = 1
+    object GrassTexRadio: TRadioButton
+      Cursor = crHandPoint
+      Left = 16
+      Height = 24
+      Top = 72
+      Width = 174
+      Caption = 'Трава из майнкрафта'
+      OnChange = GrassTexRadioChange
+      TabOrder = 0
+    end
+    object BallTexRadio: TRadioButton
+      Cursor = crHandPoint
+      Left = 16
+      Height = 24
+      Top = 168
+      Width = 142
+      Caption = 'Футбольный мяч'
+      OnChange = BallTexRadioChange
+      TabOrder = 1
+    end
+    object WoodTexButton: TRadioButton
+      Cursor = crHandPoint
+      Left = 16
+      Height = 24
+      Top = 120
+      Width = 185
+      Caption = 'Дерево из майнкрафта'
+      OnChange = WoodTexButtonChange
+      TabOrder = 2
+    end
+    object MarbleTexRadio: TRadioButton
+      Cursor = crHandPoint
+      Left = 16
+      Height = 24
+      Top = 216
+      Width = 61
+      Caption = 'Марс'
+      OnChange = MarbleTexRadioChange
+      TabOrder = 3
+    end
+  end
+end
